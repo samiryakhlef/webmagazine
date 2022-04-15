@@ -2,14 +2,19 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticlesRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Trait\SlugTrait;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Trait\CreatedAtTrait;
+use App\Repository\ArticlesRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: ArticlesRepository::class)]
 class Articles
 {
+    use CreatedAtTrait;
+    use SlugTrait;
+    
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
@@ -20,9 +25,6 @@ class Articles
 
     #[ORM\Column(type: 'text')]
     private $content;
-
-    #[ORM\Column(type: 'string', length: 255)]
-    private $slug;
 
     #[ORM\OneToMany(mappedBy: 'articles', targetEntity: Images::class)]
     private $images;
@@ -78,17 +80,6 @@ class Articles
         return $this;
     }
 
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
 
     /**
      * @return Collection<int, Images>
