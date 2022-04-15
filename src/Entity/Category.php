@@ -72,6 +72,7 @@ class Category
     {
         return $this->parents;
     }
+    
 
     public function addParent(self $parent): self
     {
