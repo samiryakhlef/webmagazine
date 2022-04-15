@@ -2,14 +2,17 @@
 
 namespace App\Entity;
 
-use App\Repository\AuthorsRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Trait\CreatedAtTrait;
+use App\Repository\AuthorsRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: AuthorsRepository::class)]
 class Authors
 {
+    use CreatedAtTrait;
+    
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
@@ -24,9 +27,6 @@ class Authors
     #[ORM\Column(type: 'integer')]
     private $contribution;
 
-    #[ORM\Column(type: 'datetime_immutable')]
-    private $createdAt;
-
     #[ORM\ManyToOne(targetEntity: Users::class, inversedBy: 'users')]
     private $users;
 
@@ -40,6 +40,7 @@ class Authors
     {
         $this->notifications = new ArrayCollection();
         $this->articles = new ArrayCollection();
+        $this->createdAt = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -79,18 +80,6 @@ class Authors
     public function setContribution(int $contribution): self
     {
         $this->contribution = $contribution;
-
-        return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
-    {
-        $this->createdAt = $createdAt;
 
         return $this;
     }
