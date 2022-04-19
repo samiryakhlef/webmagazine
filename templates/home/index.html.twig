@@ -1,0 +1,135 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Accueil{% endblock title %}
+
+{% block body %}
+<section class="content-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{{ asset ('images/carousselle.jpg') }}" class="d-flex w-100 h-50" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{ asset ('images/carousselle.jpg') }}" class="d-flex w-100 h-50" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="text-center">les dernières News:</h1>
+            <section id="groups">
+                <div class="row match-height my-3">
+                    <div class="col-12">
+                        <div class="card-group ">
+                            <div class="card mx-3">
+                                <div class="card-content">
+                                    <img class="card-img-top img-fluid" src="{{ asset ('images/carousselle.jpg') }}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">titre de l'article</h4>
+                                        <p class="card-text">
+                                            This card has supporting text below as a natural lead-in to additional
+                                            content.</p>
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mx-3">
+                                <div class="card-content">
+                                    <img class="card-img-top img-fluid" src="{{ asset ('images/carousselle.jpg') }}"
+                                        alt="Card image cap" />
+                                    <div class="card-body">
+                                        <h4 class="card-title">titre de l'article</h4>
+                                        <p class="card-text">
+                                            This card has supporting text below as a natural lead-in to additional
+                                            content.
+                                        </p>
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mx-3">
+                                <div class="card-content">
+                                    <img class="card-img-top img-fluid" src="{{ asset ('images/carousselle.jpg') }}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">titre de l'article</h4>
+                                        <p class="card-text">
+                                            This card has supporting text below as a natural lead-in to additional
+                                            content.
+                                        </p>
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mx-3">
+                                <div class="card-content">
+                                    <img class="card-img-top img-fluid" src="{{ asset ('images/carousselle.jpg') }}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">titre de l'article</h4>
+                                        <p class="card-text">
+                                            This card has supporting text below as a natural lead-in to additional
+                                            content.
+                                        </p>
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <h2 class="text-center">l'Actualité de la semaine</h2>
+
+            <section class=" content-fluid d-flex ">
+                <div class="col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <img class="card-img-top img-fluid" src="{{ asset ('images/carousselle.jpg') }}" alt="Card image cap"
+                                style="height: 20rem" />
+                            <div class="card-body">
+                                <h4 class="card-title">titre de l'article</h4>
+                                <p class="card-text">
+                                    Jelly-o sesame snaps cheesecake topping. Cupcake fruitcake macaroon donut
+                                    pastry gummies tiramisu chocolate bar muffin. Dessert bonbon caramels brownie chocolate
+                                    bar
+                                    chocolate tart dragée.
+                                </p>
+                                <p class="card-text">
+                                    Cupcake fruitcake macaroon donut pastry gummies tiramisu chocolate bar muffin.
+                                </p>
+                                <button class="btn btn-warning block">En savoir plus...</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <h4 class="card-title">titre de l'article</h4>
+                                <p class="card-text">
+                                    Jelly-o sesame snaps cheesecake topping. Cupcake fruitcake macaroon donut
+                                    pastry gummies tiramisu chocolate bar muffin. Dessert bonbon caramels brownie chocolate
+                                    bar
+                                    chocolate tart dragée.
+                                </p>
+                                <p class="card-text">
+                                    Cupcake fruitcake macaroon donut pastry gummies tiramisu chocolate bar
+                                    muffin.
+                                </p>
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                            <img class="card-img-bottom img-fluid" src="{{ asset ('images/carousselle.jpg') }}"
+                                alt="Card image cap" style="height: 20rem; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+            {% endblock body %}
