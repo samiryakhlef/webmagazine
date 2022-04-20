@@ -33,8 +33,7 @@ class Authors
     #[ORM\OneToMany(mappedBy: 'authors', targetEntity: Notifications::class)]
     private $notifications;
 
-    #[ORM\OneToMany(mappedBy: 'authors', targetEntity: Articles::class)]
-    private $articles;
+
 
     public function __construct()
     {
@@ -126,33 +125,4 @@ class Authors
         return $this;
     }
 
-    /**
-     * @return Collection<int, Articles>
-     */
-    public function getArticles(): Collection
-    {
-        return $this->articles;
-    }
-
-    public function addArticle(Articles $article): self
-    {
-        if (!$this->articles->contains($article)) {
-            $this->articles[] = $article;
-            $article->setAuthors($this);
-        }
-
-        return $this;
-    }
-
-    public function removeArticle(Articles $article): self
-    {
-        if ($this->articles->removeElement($article)) {
-            // set the owning side to null (unless already changed)
-            if ($article->getAuthors() === $this) {
-                $article->setAuthors(null);
-            }
-        }
-
-        return $this;
-    }
 }

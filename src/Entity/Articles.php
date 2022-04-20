@@ -38,11 +38,10 @@ class Articles
     #[ORM\OneToMany(mappedBy: 'articles', targetEntity: Notifications::class)]
     private $notifications;
 
-    #[ORM\ManyToOne(targetEntity: Authors::class, inversedBy: 'articles')]
-    private $authors;
+    #[ORM\Column(type: 'blob')]
+    private $image;
 
-    #[ORM\ManyToOne(targetEntity: Authors::class, inversedBy: 'articles')]
-    private $contribution;
+
 
     public function __construct()
     {
@@ -183,27 +182,16 @@ class Articles
         return $this;
     }
 
-    public function getAuthors(): ?Authors
+    public function getImage()
     {
-        return $this->authors;
+        return $this->image;
     }
 
-    public function setAuthors(?Authors $authors): self
+    public function setImage($image): self
     {
-        $this->authors = $authors;
+        $this->image = $image;
 
         return $this;
     }
 
-    public function getContribution(): ?Authors
-    {
-        return $this->contribution;
-    }
-
-    public function setContribution(?Authors $contribution): self
-    {
-        $this->contribution = $contribution;
-
-        return $this;
-    }
 }
