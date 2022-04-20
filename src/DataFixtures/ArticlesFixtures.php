@@ -11,11 +11,9 @@ use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 
 class ArticlesFixtures extends Fixture
 {
-    private $uploaderHelper;
 
-    public function __construct(private SluggerInterface $slugger, UploaderHelper $uploaderHelper)
+    public function __construct(private SluggerInterface $slugger)
     {
-        $this->uploaderHelper = $uploaderHelper;
     }
 
     public function load(ObjectManager $manager): void
@@ -31,7 +29,7 @@ class ArticlesFixtures extends Fixture
             $article->setContent($faker->paragraph());
             $article->setCreatedAt(DateTimeImmutable::createFromMutable($faker->dateTime('d_m_Y H:i:s')));
             $article->setSlug($faker->slug());
-            $article->setImage('/images/carousselle.jpg');
+            $article->setImage('images/carousselle.jpg');
             $manager->persist($article);
         }
         $manager->flush();
