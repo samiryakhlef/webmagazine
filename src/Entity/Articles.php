@@ -43,6 +43,8 @@ class Articles
 
 
 
+
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
@@ -187,11 +189,10 @@ class Articles
         return $this->image;
     }
 
-    public function setImage($image): self
+    public function setImage($image)
     {
         $this->image = $image;
 
         return $this;
     }
-
 }
