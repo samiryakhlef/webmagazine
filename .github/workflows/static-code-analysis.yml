@@ -11,7 +11,4 @@ jobs:
         uses: docker://jakzal/phpqa:php8.1-alpine
         with:
           args: phpstan analyze src/ -l 1
-      - name: Deptrac
-        uses: docker://jakzal/phpqa:php8.1-alpine
-        with:
-          args: deptrac --no-interaction --ansi --formatter-graphviz-display=0
+      
