@@ -64,7 +64,7 @@ class ArticleUnitTest extends TestCase
         $this->assertFalse($article->getNotification() === false);
         $this->assertFalse($article->getSlug() === 'false');
         $this->assertFalse($article->getFile() === 'false');
-        $this->assertFalse($article->getUser() === $user);
+        $this->assertFalse($article->getUser() === new User());
         $this->assertNotContains(new Categorie(), $article->getCategorie());
     }
 
