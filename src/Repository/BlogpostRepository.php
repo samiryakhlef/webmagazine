@@ -2,30 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\Images;
+use App\Entity\Blogpost;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Images|null find($id, $lockMode = null, $lockVersion = null)
- * @method Images|null findOneBy(array $criteria, array $orderBy = null)
- * @method Images[]    findAll()
- * @method Images[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Blogpost|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Blogpost|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Blogpost[]    findAll()
+ * @method Blogpost[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ImagesRepository extends ServiceEntityRepository
+class BlogpostRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Images::class);
+        parent::__construct($registry, Blogpost::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Images $entity, bool $flush = true): void
+    public function add(Blogpost $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +37,7 @@ class ImagesRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Images $entity, bool $flush = true): void
+    public function remove(Blogpost $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,15 +46,15 @@ class ImagesRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Images[] Returns an array of Images objects
+    //  * @return Blogpost[] Returns an array of Blogpost objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('i')
-            ->andWhere('i.exampleField = :val')
+        return $this->createQueryBuilder('b')
+            ->andWhere('b.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('i.id', 'ASC')
+            ->orderBy('b.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -63,10 +63,10 @@ class ImagesRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Images
+    public function findOneBySomeField($value): ?Blogpost
     {
-        return $this->createQueryBuilder('i')
-            ->andWhere('i.exampleField = :val')
+        return $this->createQueryBuilder('b')
+            ->andWhere('b.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()
