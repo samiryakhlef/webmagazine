@@ -16,16 +16,20 @@
 		{% endblock %}
 		</head>
 		
-	<body>
-
+		<body>
+			
+			
+			
+			
+			{% include "partials/header.html.twig" %}		
+			{% block body %}
+			
 		
-		
-		
+			{% endblock %}
+			{% include "partials/footer.html.twig" %}	
 	
+
 			
-		{% block body %} {% endblock %}
-			
-		
 			
 			{# javascripts #}
 			{% block javascripts %}

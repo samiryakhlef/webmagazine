@@ -41,5 +41,6 @@ class CategorieUnitTest extends TestCase
         $this->assertEmpty($categorie->getNom());
         $this->assertEmpty($categorie->getDescription());
         $this->assertEmpty($categorie->getSlug());
+        
     }
 }
