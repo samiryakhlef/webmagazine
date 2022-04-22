@@ -55,7 +55,7 @@ symfony check:requirements
                 et
             -yarn encore dev --watch
 
-# Céation du HomeController
+# Création du HomeController
     Pour obtenir une liste de toutes les routes de votre système avec "debug:router", utilisez la commande:
 
         php bin/console debug:router
