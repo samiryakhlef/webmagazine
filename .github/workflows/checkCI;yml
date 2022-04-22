@@ -1,3 +1,9 @@
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+        
 image: jakzal/phpqa:php7.4
 
 before_script:
